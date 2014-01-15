@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Filtrations</string>
+    <string name="action_settings">Settings</string>
+    <string name="reset">Reset</string>
+    <string name="action_import_picture">Import picture</string>
+    <string name="action_fire">Process</string>
+    <string name="hello_world">Hello world!</string>
+    
+    
+    <string name="Dialog_importPicture_choice1">Camera</string>
+    <string name="Dialog_importPicture_choice2">Gallery</string>
+    <string name="Dialog_importPicture_title">Import picture from</string>
+    <string name="Dialog_importWith_title">Choose application</string>
+
+</resources>
