@@ -82,8 +82,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		mImagePicker.dispatchActivityResult(requestCode, resultCode, data,
-				mImage);
+		mImagePicker.dispatchActivityResult(requestCode, resultCode, data, mImage);
+		if(resultCode == Activity.RESULT_OK)
+			mResetButton.setVisibility(View.VISIBLE);
 	}
 
 	@Override

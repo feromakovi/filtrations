@@ -66,6 +66,27 @@ public class FileHelper {
 		}
 		return b;
 	}
+
+	/**
+     * Convert bitmap to the grayscale
+     *
+     * @param bmpOriginal Original bitmap
+     * @return Grayscale bitmap
+     */
+    public Bitmap toGrayscale(Bitmap bmpOriginal) {
+        final int height = bmpOriginal.getHeight();
+        final int width = bmpOriginal.getWidth();
+
+        final Bitmap bmpGrayscale = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        final Canvas c = new Canvas(bmpGrayscale);
+        final Paint paint = new Paint();
+        final ColorMatrix cm = new ColorMatrix();
+        cm.setSaturation(0);
+        final ColorMatrixColorFilter f = new ColorMatrixColorFilter(cm);
+        paint.setColorFilter(f);
+        c.drawBitmap(bmpOriginal, 0, 0, paint);
+        return bmpGrayscale;
+    }
 	
 	public static boolean copy(File file, String path, boolean rewrite) {
 		try {
