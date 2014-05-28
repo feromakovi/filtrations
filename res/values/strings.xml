@@ -9,9 +9,9 @@
     <string name="hello_world">Hello world!</string>
     
     
-    <string name="Dialog_importPicture_choice1">Camera</string>
-    <string name="Dialog_importPicture_choice2">Gallery</string>
-    <string name="Dialog_importPicture_title">Import picture from</string>
+    <string name="App_Text_Camera">Camera</string>
+    <string name="App_Text_Gallery">Gallery</string>
+    <string name="Dialog_ChoosePicture_title">Import picture from</string>
     <string name="Dialog_importWith_title">Choose application</string>
 
 </resources>
