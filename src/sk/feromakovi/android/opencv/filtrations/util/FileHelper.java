@@ -5,9 +5,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -61,6 +66,7 @@ public class FileHelper {
 			b = BitmapFactory.decodeFile(filePath);
 			if(Math.max(b.getHeight(), b.getWidth()) > 2000)
 				b = Bitmap.createScaledBitmap(b, b.getWidth() / 2, b.getHeight() / 2, true);
+			b = toGrayscale(b);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -73,7 +79,7 @@ public class FileHelper {
      * @param bmpOriginal Original bitmap
      * @return Grayscale bitmap
      */
-    public Bitmap toGrayscale(Bitmap bmpOriginal) {
+    public static Bitmap toGrayscale(Bitmap bmpOriginal) {
         final int height = bmpOriginal.getHeight();
         final int width = bmpOriginal.getWidth();
 
