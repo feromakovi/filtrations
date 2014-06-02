@@ -14,7 +14,7 @@ import org.opencv.imgproc.Imgproc;
 
 import android.graphics.Bitmap;
 
-public final class FrequencyFilter implements ImageProcessor {
+public final class FrequencyFilter extends ImageProcessor {
 
 	@Override
 	public Bitmap process(Bitmap image) {
