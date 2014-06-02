@@ -40,7 +40,7 @@ public abstract class ImageProcessor {
 		try{
 			String[] lines = mKernel.split("@");
 			final int cLines = lines.length;
-			final Mat kernelMat = new Mat(cLines, cLines, CvType.CV_32F);
+			final Mat kernelMat = new Mat(cLines, cLines, CvType.CV_8U);
 			for(int l = 0; l < lines.length; l++){
 				String line = lines[l];
 				String[] cls = line.split("#");

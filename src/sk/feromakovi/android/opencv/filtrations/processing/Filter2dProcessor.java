@@ -5,7 +5,7 @@ import org.opencv.imgproc.Imgproc;
 
 import android.graphics.Bitmap;
 
-public final class ConvolutionFilter extends ImageProcessor {
+public final class Filter2dProcessor extends ImageProcessor {
 
 	@Override
 	public Bitmap process(Bitmap image) {
@@ -41,7 +41,7 @@ public final class ConvolutionFilter extends ImageProcessor {
 
 	@Override
 	public CharSequence getName() {
-		return "Convolution filter";
+		return "Filter2D";
 	}
 
 }

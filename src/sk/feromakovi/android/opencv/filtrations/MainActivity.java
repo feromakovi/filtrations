@@ -7,8 +7,9 @@ import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 
-import sk.feromakovi.android.opencv.filtrations.processing.ConvolutionFilter;
-import sk.feromakovi.android.opencv.filtrations.processing.FrequencyFilter;
+import sk.feromakovi.android.opencv.filtrations.processing.ErodeProcessor;
+import sk.feromakovi.android.opencv.filtrations.processing.Filter2dProcessor;
+import sk.feromakovi.android.opencv.filtrations.processing.DilateProcessor;
 import sk.feromakovi.android.opencv.filtrations.processing.ImageProcessor;
 import sk.feromakovi.android.opencv.filtrations.util.ImagePicker;
 import android.app.Activity;
@@ -30,8 +31,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	@SuppressWarnings("serial")
 	private final List<ImageProcessor> mImageProcessors = new ArrayList<ImageProcessor>() {
 		{
-			add(new FrequencyFilter());
-			add(new ConvolutionFilter());
+			add(new DilateProcessor());
+			add(new ErodeProcessor());
+			add(new Filter2dProcessor());
 		}
 	};
 
