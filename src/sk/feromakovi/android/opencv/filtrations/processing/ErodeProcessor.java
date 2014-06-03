@@ -3,18 +3,14 @@ package sk.feromakovi.android.opencv.filtrations.processing;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
 
-import android.graphics.Bitmap;
-
 public final class ErodeProcessor extends ImageProcessor{
 	
 	@Override
-	public Bitmap process(Bitmap image) {
-		Mat mat = erode(bitmapToMat(image));
-		return matToBitmap(mat);
+	protected Mat process(Mat mat, Mat kernel) {
+		return erode(mat, kernel);
 	}
-
-	private Mat erode(Mat mat) {
-		Mat kernelMat = onParseKernel(mKernel);
+	
+	private Mat erode(Mat mat, Mat kernelMat) {
 		Imgproc.erode(mat, mat, kernelMat);
 		return mat;
 	}

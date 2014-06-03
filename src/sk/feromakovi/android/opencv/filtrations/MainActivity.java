@@ -128,7 +128,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(DialogInterface arg0, int which) {
 		ImageProcessor selectedProcessor = mImageProcessors.get(which);
-		Bitmap processedBitmap = selectedProcessor.process(mImagePicker
+		Bitmap processedBitmap = selectedProcessor.processBitmap(mImagePicker
 				.getReceivedBitmap());
 		if (processedBitmap != null) {
 			mImage.setImageBitmap(processedBitmap);

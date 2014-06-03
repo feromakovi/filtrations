@@ -3,18 +3,14 @@ package sk.feromakovi.android.opencv.filtrations.processing;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
 
-import android.graphics.Bitmap;
-
 public final class DilateProcessor extends ImageProcessor {
 
 	@Override
-	public Bitmap process(Bitmap image) {
-		Mat mat = dilate(bitmapToMat(image));
-		return matToBitmap(mat);
+	protected Mat process(Mat mat, Mat kernel) {
+		return dilate(mat, kernel);
 	}
 
-	private Mat dilate(Mat mat) {
-		Mat kernelMat = onParseKernel(mKernel);
+	private Mat dilate(Mat mat, Mat kernelMat) {
 		Imgproc.dilate(mat, mat, kernelMat);
 		return mat;
 	}

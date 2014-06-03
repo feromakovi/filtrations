@@ -14,7 +14,6 @@ public abstract class ImageProcessor {
 	
 	protected String mKernel = STRING_KERNEL_SOBEL;
 	
-	public abstract Bitmap process(final Bitmap image);
 	public abstract CharSequence getName(); 
 	
 	protected Mat bitmapToMat(Bitmap bitmap){
@@ -22,6 +21,15 @@ public abstract class ImageProcessor {
 		Utils.bitmapToMat(bitmap, mat);
 		return mat;
 	}
+	
+	public Bitmap processBitmap(Bitmap bitmap){
+		Mat bitmapMat = bitmapToMat(bitmap);
+		Mat kernelMat = onParseKernel(mKernel);
+		Mat processed = process(bitmapMat, kernelMat);
+		return matToBitmap(processed);
+	} 
+	
+	protected abstract Mat process(Mat bitmapMat, Mat kernelMat);
 	
 	protected Bitmap matToBitmap(Mat mat){
 		Bitmap resultBitmap = Bitmap.createBitmap(mat.cols(), mat.rows(), Bitmap.Config.ARGB_8888);
